@@ -7,9 +7,11 @@
 <body>
 <script type="text/javascript">
 	$.get('http://graph.facebook.com/204147592954139', function(data) {
-	  alert(data.checkins);
+	  alert("facebook check ins"+data.checkins);
 	}, "json");
-alert("chafa");
+	$.get('https://api.foursquare.com/v2/venues/4b2c42b6f964a520cdc424e3?client_id=33SWUNTXDNXF3ZO4O2K2EC0XXMXPGAYIO3POPBSMJPDR33QT&client_secret=DFQCEG4E3GDZGP2UMFJU23VYDA0WXNUTMW41NKOECUWHCEIW&v=20120815', function(data) {
+	  alert("foursquare check ins"+data.response.venue.stats.checkinsCount);
+	}, "json");
 </script>
 </body>
 </html>
