@@ -6,12 +6,18 @@
 </head>
 <body>
 <script type="text/javascript">
-	$.get('http://graph.facebook.com/204147592954139', function(data) {
+
+	$.getJSON('http://graph.facebook.com/204147592954139', function(data) {
 	  alert("facebook check ins"+data.checkins);
-	}, "json");
-	$.get('https://api.foursquare.com/v2/venues/4b2c42b6f964a520cdc424e3?client_id=33SWUNTXDNXF3ZO4O2K2EC0XXMXPGAYIO3POPBSMJPDR33QT&client_secret=DFQCEG4E3GDZGP2UMFJU23VYDA0WXNUTMW41NKOECUWHCEIW&v=20120815', function(data) {
+	});
+	$.getJSON('https://api.foursquare.com/v2/venues/4b2c42b6f964a520cdc424e3?client_id=33SWUNTXDNXF3ZO4O2K2EC0XXMXPGAYIO3POPBSMJPDR33QT&client_secret=DFQCEG4E3GDZGP2UMFJU23VYDA0WXNUTMW41NKOECUWHCEIW&v=20120815', function(data) {
 	  alert("foursquare check ins"+data.response.venue.stats.checkinsCount);
-	}, "json");
+	});
+	
+	$.getJSON('http://search.twitter.com/search.json?callback=?&page=3&max_id=237304749895069696&q=%23bucadibeppo%20OR%20%40bucadibeppo%20since%3A2011-08-17&rpp=100&result_type=recent', function(data) {
+	  alert("twitter last page check ins"+data.results.length);
+	});
+
 </script>
 </body>
 </html>
